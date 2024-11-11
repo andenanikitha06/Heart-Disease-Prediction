@@ -27,8 +27,8 @@ This repository contains the code for a web application built using Flask that p
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/Heart_disease_flask.git
-    cd Heart_disease_flask
+    git clone https://github.com/yourusername/heartdisease_flask.git
+    cd heartdisease_flask
     ```
 
 2. **Set up a virtual environment (optional but recommended)**
