@@ -31,11 +31,7 @@ This repository contains the code for a web application built using Flask that p
     cd Heart_disease_flask
     ```
 
-2. **Set up a virtual environment (optional but recommended):**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
+2. **Set up a virtual environment (optional but recommended)**
 
 3. **Install the necessary dependencies:**
     ```bash
