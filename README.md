@@ -6,7 +6,7 @@ This is a web-based application developed using Flask to predict heart disease b
 
 The project consists of several folders and files:
 
-Heart_disease_flask/
+### Heart_disease_flask/
 │
 ├── static/                        # Static files (CSS, JS, images)
 │   ├── Heart.jpg                  # Image for the webpage
