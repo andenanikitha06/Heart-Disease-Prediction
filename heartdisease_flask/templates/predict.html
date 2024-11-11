@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Heart Disease Prediction Input Form</h2>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <label for="cp">Chest Pain Type (cp):</label>
+            <input type="number" id="cp" name="cp" min="0" max="3" required>
+
+            <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+            <input type="number" id="trestbps" name="trestbps" required>
+
+            <label for="chol">Cholesterol (chol):</label>
+            <input type="number" id="chol" name="chol" required>
+
+            <label for="fbs">Fasting Blood Sugar > 120 mg/dl (fbs):</label>
+            <select id="fbs" name="fbs" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="restecg">Resting Electrocardiographic Results (restecg):</label>
+            <input type="number" id="restecg" name="restecg" min="0" max="2" required>
+
+            <label for="thalach">Maximum Heart Rate Achieved (thalach):</label>
+            <input type="number" id="thalach" name="thalach" required>
+
+            <label for="exang">Exercise Induced Angina (exang):</label>
+            <select id="exang" name="exang" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

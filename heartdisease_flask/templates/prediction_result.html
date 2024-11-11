@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <p class="result">{{ prediction_text }}</p> 
+        <p class="probability">Probability Score: {{ probability_score }}%</p>
+        
+        {% if prediction == "Yes" %} 
+        <div class="suggestions">
+            <h3>Suggestions for Heart Health</h3>
+            <ul>
+                <li>Maintain a balanced diet rich in fruits, vegetables, and whole grains.</li>
+                <li>Engage in regular physical activity, such as 30 minutes of moderate exercise daily.</li>
+                <li>If you have a habit of smoking or alcohol intake, avoid smoking and limit alcohol intake.</li>
+                <li>Monitor and manage blood pressure, cholesterol, and blood sugar levels regularly.</li>
+                <li>Consider consulting a healthcare provider for personalized treatment options and lifestyle adjustments.</li>
+            </ul>
+        </div>
+        {% endif %}
+        
+        <a class="button" href="{{ url_for('predict') }}">Make Another Prediction</a>
+    </div>
+</body>
+</html>
+
+
