@@ -1,66 +1,85 @@
 # Heart Disease Prediction Web App
 
-This is a web-based application developed using Flask to predict heart disease based on user inputs. The model is a machine learning classifier trained to predict whether a person is likely to have heart disease or not. The application allows users to input health-related data, and it provides a prediction result indicating the likelihood of heart disease.
+This repository contains the code for a web application built using Flask that predicts whether a person is at risk for heart disease based on user-provided health data. The app uses a pre-trained machine learning model to make predictions and displays the results to the user.
 
 ## Project Structure
 
-The project consists of several folders and files:
+1. **`index.html`** - The main landing page where users can log in to access the app.
+2. **`homepage.html`** - The home page shown to users after logging in, featuring a navigation menu and links to other sections.
+3. **`predict.html`** - The user input page where users can enter their health data (age, cholesterol levels, blood pressure, etc.) for prediction.
+4. **`prediction_result.html`** - The results page displaying the heart disease prediction based on the user’s inputs.
+5. **`homepage.css`** - Styles for the homepage layout.
+6. **`predict.css`** - Styles for the user input page (prediction form).
+7. **`script.js`** - JavaScript for handling the form submission and making AJAX requests.
+8. **`app.py`** - Main Flask application file to handle routing and machine learning model prediction.
+9. **`model.py`** - Python script for loading and using the pre-trained machine learning model (`hdp_model.pkl`).
+10. **`hdp_model.pkl`** - The trained machine learning model file used for heart disease prediction.
+11. **`README.md`** - Project documentation.
 
-### Heart_disease_flask/
-│
-├── static/                        # Static files (CSS, JS, images)
-│   ├── Heart.jpg                  # Image for the webpage
-│   ├── homepage.css              # Styles for the homepage
-│   ├── homepage.js               # JavaScript for the homepage
-│   ├── predict.css               # Styles for the predict page , predcition_results page 
-│   └── script.js                 # JavaScript for the prediction page
-│
-├── templates/                     # HTML templates for rendering pages
-│   ├── homepage.html             # Homepage layout
-│   ├── index.html                # Main landing page
-│   ├── predict.html              # Form to input data for prediction
-│   └── prediction_result.html    # Page to display prediction results
-│
-├── app.py                         # Main Flask application
-├── hdp_model.pkl                  # Trained machine learning model
-├── model.py                       # Python script to load and use the trained model
+## Features
 
+- **User Authentication:** Users can log in and access the prediction page. The app uses a simple login mechanism (though this can be expanded in the future).
+- **Heart Disease Prediction:** Users input their health data, and the app uses a trained machine learning model to predict whether they are at risk for heart disease.
+- **Results Display:** The prediction result is displayed on a separate page with the recommendation of either being at risk or not at risk for heart disease.
+- **Responsive Design:** The website is designed to be responsive, ensuring accessibility on various devices.
 
-## Installation
+## How to Run
 
-### Prerequisites
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/Heart_disease_flask.git
+    cd Heart_disease_flask
+    ```
 
-- Python 3.x
-- pip (Python package installer)
+2. **Set up a virtual environment (optional but recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
-### Step 1: Clone the repository
+3. **Install the necessary dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-```bash
-git clone https://github.com/yourusername/Heart_disease_flask.git
-cd Heart_disease_flask
+4. **Run the Flask application:**
+    ```bash
+    python app.py
+    ```
 
-**### Step 2 : Setup Virtual Environment**
+5. Open a web browser and visit `http://127.0.0.1:5000/` to use the app.
 
-**### Install the necessary libraries using pip:**
-pip install -r requirements.txt
+## Usage
 
-**### Start the Flask server:**
+### Home Page (`index.html`)
 
-python app.py
+- **Login Page:** This is the main landing page where users can log in to access the application. Once logged in, users are redirected to the homepage.
 
-**Visit http://127.0.0.1:5000/ in your web browser to access the app.**
+### Homepage (`homepage.html`)
 
-**USAGE**
-Login Page (index.html): This is the main landing page where users can log in to access the app. It serves as the entry point to the application.
-Home Page (homepage.html): After logging in, users are directed to the home page, where they can navigate to the prediction form or view other details about the app.
-User Input Page (predict.html): Users fill out their health data, such as cholesterol levels, blood pressure, etc., to be used for heart disease prediction.
-Prediction Result Page (prediction_result.html): After submitting the form, users are shown the prediction result indicating whether they are at risk of heart disease or not and with Some Suggestions .
+- **Navigation:** The homepage contains links to the prediction page where users can input their health data.
+- **Prediction Link:** Clicking on the link will take users to the input form (`predict.html`).
 
-**How It Works**
-User Input: Users input their health data on the predict.html page. This page includes a form where users can enter their personal health details like age, cholesterol level, blood pressure, etc.
+### User Input Page (`predict.html`)
 
-Model Loading and Prediction: When the user submits the form, the app loads the pre-trained machine learning model (hdp_model.pkl) using the model.py script. The model performs a prediction based on the user-provided data.
+- **Health Data Input:** Users enter details such as age, cholesterol levels, blood pressure, and other health parameters to predict the likelihood of heart disease.
+- **Submit:** Upon submitting the form, the app will process the input data and predict the likelihood of heart disease.
 
-Displaying Results: After the model makes a prediction, the result is displayed on the prediction_result.html page. The page shows whether the user is at risk for heart disease or not, based on the model's output.
+### Prediction Result Page (`prediction_result.html`)
+
+- **Prediction Result:** After the user submits the form, the results page will display whether the user is at risk for heart disease or not based on the machine learning model’s prediction.
+
+---
+
+## How It Works
+
+1. **User Input:** Users input their health data on the `predict.html` page. This page includes a form where users can enter their personal health details, such as cholesterol level, blood pressure, etc.
+
+2. **Model Loading and Prediction:** When the user submits the form, the app loads the pre-trained machine learning model (`hdp_model.pkl`) using the `model.py` script. The model processes the data and performs a prediction.
+
+3. **Displaying Results:** After the model makes a prediction, the result is shown on the `prediction_result.html` page, indicating whether the user is at risk for heart disease (1) or not (0) and some suggestions.
+
+---
+
 
 
